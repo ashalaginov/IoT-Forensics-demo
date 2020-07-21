@@ -100,4 +100,5 @@ You can find more information about the practical experiments and datasets in th
 
 ## Misc
 Uploaded files:
-- arduino_dump.hex - dump of the firmware from the IoT node
+- arduino_dump.hex - dump of the firmware from the IoT node with Neural Network client implementation
+- vol3-2.home.pi.mqtt_ml.ArduinoANN_training_RaspberryPi.a.out - ELF binary file from IoT gateway with Neural Network server implementation
