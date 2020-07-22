@@ -31,7 +31,7 @@ n our setup, we utilize Avrdude tool with Arduino as AVR  in-system programming 
 $ avrdude -P /dev/ttyUSB0 -F -v -v -c arduino -pm328 -D -Uflash:r:arduino_dump.hex:r
 $ md5sum
 	219de396b61bd3feefc064295fa53828  arduino_dump.hex
-$ls -la
+$ ls -la
 	-rw-rw-r-- 1  32652 nov.  21 12:17 arduino_dump.hex
 ```
 
