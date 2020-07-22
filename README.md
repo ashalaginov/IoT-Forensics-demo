@@ -21,7 +21,7 @@ $ screen /dev/ttyUSB1 115200
 
 ### Live acquisition of the network traffic
 One of the important sources for digital evidential data is network communication within the given IoT infrastructure. To acquire necessary data and technical details, we used Address Resolution Protocol (ARP) Spoofing approach with a help of EtterCAP tool that allows sniffing of a stitched network. The result of the program execution is shown in the figure below.
-![EtterCAP](photo.jpg)
+![EtterCAP](ettercap.png)
 From EtterCAP we note two important issues: there are two devices with IP addressed 192.168.0.100, 192.168.0.200 that have regular MQTT communication transferring weights (parameters) of the Artificial Neural Network.
 
 
