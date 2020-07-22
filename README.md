@@ -2,11 +2,11 @@
 Proof-of-concept demonstration of IoT forensics approach to analyse data from smart application
 
 ## Description
-We investigate digital forensics readiness of interconnected devices in the Edge, rather than of a stand-alone device. The focus is on the open-source platforms to create a corresponding road map for the investigative process along with recommendations. In particular, it was (i) created a Smart Application (environment sensors control) scenario with Edge devices involving IoT hub (Raspberry Pi) and IoT end-point devices (Arduino Uno and ESP8266), (ii) performed step-by-step collection of the artefacts in accordance to Digital Forensics Process and (iii) analysis of the acquired digital evidences from interconnected Edge devices using open-source existing tools. A special focus will be given to understanding and reverse-engineering ML/AI software found along with raw data on IoT devices' storage, considering omnipresence of such software in IoT appliances. 
+This example show study of digital forensics readiness of interconnected devices in the Edge. The focus is on the open-source platforms to create a corresponding road map for the investigative process along with recommendations. In particular, it was (i) created a Smart Application (environment sensors control) scenario with Edge devices involving IoT hub (Raspberry Pi) and IoT end-point devices (Arduino Uno and ESP8266), (ii) performed step-by-step collection of the artefacts in accordance to Digital Forensics Process and (iii) analysis of the acquired digital evidences from interconnected Edge devices using open-source existing tools. A special focus will be given to understanding and reverse-engineering ML/AI software found along with raw data on IoT devices' storage, considering omnipresence of such software in IoT appliances. 
 
 
 ## Computer Forensics Investigation in the Edge 
-Below the short description of used methodlogy is given
+Below the short description of used methodlogy is given.
 
 ### Field work and Acquisition
 A person, who deals with the Smart Application setup, needs to clearly identify used components, sensors, actuators, connectivity and possible information flow and anticipated logic of the system. The picture of the aforementioned setup is shown in the figure below. In this case, all the devices have labels and distinct logos, making them easy to identify and reveal capabilities and technical characteristics.
@@ -59,8 +59,7 @@ $ md5sum sd-card-copy.img
 ```
 
 ### Machine Learning Component Analysis
-As mentioned before, any ML application program use data to train a specific model use for further decision making in Smart Applications. The report is extracted using SleuthKit and shown in the listing below.
-
+Any present ML application program use data to train a specific model use for further decision making in Smart Applications. The file report is extracted using SleuthKit.
 ```bash 
 $ file /2/home/pi/mqtt_ml/ArduinoANN_training_RaspberryPi/a.out
 File Type: ELF 32-bit LSB shared object, ARM, EABI5 version 1 (GNU/Linux), dynamically linked, interpreter /lib/ld-, for GNU/Linux 3.2.0, BuildID[sha1]=d70d380be66d6e2b6544802dd745707db2834430, not stripped
@@ -80,8 +79,9 @@ $ radare2 -aarm ./a.out
 For the demonstration purpose, we model a core architecture of the Smart Home, also found in other domains - intelligent monitoring with a feedback loop. An imaginary scenario was developed inspired by MEML (Shalaginov et al. 2019), where the IoT node uses the ML model trained on the IoT gateway to protect against cyber attacks. The diagram of the experimental installation shown in the figure below.
 ![Experimental Setup](setup.png)
 
+
 ## Requirements
-- Raspberry Pi 3 B (16 Gbytes microSD card), IP address 192.168.0.200
+- Raspberry Pi 3 B (Quad Core 1.2GHz  CPU, 1GB RAM, 16 GB microSD card), IP address 192.168.0.200
 - Arduino Uno (microcontroller ATmega328P, Flash 32Kbytes, RAM 2 KBytes, EEPROM 1 Kbyte), IP address 192.168.0.100
 - ENC28J60 Ethernet controller for Arduino
 - 5 ports 10/100 Fast Ethernet Switch
